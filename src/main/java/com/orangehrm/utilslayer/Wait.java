@@ -14,6 +14,7 @@ import com.orangehrm.ihelper.IWait;
 public class Wait implements IWait {
 
 	WebDriver driver;
+	
 
 	public Wait() {
 		driver = DriverManager.getInstance().getDriver();
@@ -44,5 +45,24 @@ public class Wait implements IWait {
 
 		return getWait().until(ExpectedConditions.alertIsPresent());
 	}
+
+	@Override
+	public WebDriver frameToBeAvailableAndSwitchToIt(String frameNameOrId) {
+		return getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameNameOrId));
+	}
+
+	@Override
+	public WebDriver frameToBeAvailableAndSwitchToIt(int index) {
+		
+		return getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
+	}
+
+	@Override
+	public WebDriver frameToBeAvailableAndSwitchToIt(WebElement wb) {
+		
+		return getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(wb));
+	}
+	
+	
 
 }
