@@ -1,10 +1,13 @@
 package com.orangehrm.baselayer;
 
+import org.openqa.selenium.WebDriver;
+
+import com.orangehrm.utilslayer.DriverManager;
+
 public class BaseClass {
-
-	public static void main(String[] args) {
-		System.out.println("Base class is added by Anand");
-
+	protected WebDriver driver;
+	public BaseClass() {
+		driver = DriverManager.getInstance().getDriver();
 	}
 
 }
